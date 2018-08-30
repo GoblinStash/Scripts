@@ -1,14 +1,3 @@
-// Get command line arguments
-var argv = require('minimist')(process.argv.slice(2));
-
-// Import the icecold library
-var icecold = require('icecold').icecold;
-var ic = new icecold(argv.api);
-
-// Run the realmscraper library
-var rs = new RealmScraper();
-rs.run();
-
 class RealmScraper {
     constructor() {
         this.realms = [];
@@ -133,3 +122,14 @@ class RealmScraper {
         return text.replace("'", "''");
     }
 }
+
+// Get command line arguments
+var argv = require('minimist')(process.argv.slice(2));
+
+// Import the icecold library
+var icecold = require('icecold').icecold;
+var ic = new icecold(argv.api);
+
+// Run the realmscraper library
+var rs = new RealmScraper();
+rs.run();
